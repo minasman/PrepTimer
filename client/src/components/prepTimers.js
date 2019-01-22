@@ -1,20 +1,22 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import Product from '../stateless/product';
 
 class PrepTimers extends React.Component {
 
-    render() {
-        console.log(this.props)
-        return (
+    makeTimers() {
+        return this.props.products[0].map(product => <Product item={product} key={product.name} />)
+    }
 
-            <div>Prep Timers</div>
+    render() {
+        return (
+            <div>{this.makeTimers()}</div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
     return {
-
         products: state.products
     }
 }
