@@ -1,7 +1,12 @@
 import React from 'react';
+import PrepTimers from './prepTimers';
 
 const App = () => {
-    return <div>APP</div>
+    return (
+        <div>
+            <PrepTimers />
+        </div>
+    )
 }
 
 export default App;
