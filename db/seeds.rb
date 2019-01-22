@@ -1,7 +1,15 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+product_list = {
+    "american_cheese" => {"name" => "American Cheese", "description" => "Yellow American Cheese", "secondary_shelf_life" => 7200, "area" => "Prep Table"},
+    "shredded_lettuce" => {"name" => "Shredded Lettuce", "description" => "Shredded Lettuce", "secondary_shelf_life" => 7200, "area" => "Prep Table"},
+    "leaf_lettuce" => {"name" => "Leaf Lettuce", "description" => "Leaf Lettuce", "secondary_shelf_life" => 7200, "area" => "Prep Table"},
+    "pickles" => {"name" => "Pickles", "description" => "Sliced Dill Pickles", "secondary_shelf_life" => 86400, "area" => "Prep Table"},
+    "slivered_onions" => {"name" => "Slivered Onions", "description" => "Slivered Onions", "secondary_shelf_life" => 14400, "area" => "Prep Table"},
+    "dehydrated_onions" => {"name" => "Dehydrated Onions", "description" => "Dehydrated Onions", "secondary_shelf_life" => 7200, "area" => "Prep Table"},
+    "roma_tomatoes" => {"name" => "Roma Tomatoes", "description" => "Sliced Roma Tomatoes", "secondary_shelf_life" => 14400, "area" => "Prep Table"},
+    "sliced_bacon" => {"name" => "Applewood Bacon", "description" => "Sliced Applewood Smoked Bacon", "secondary_shelf_life" => 14400, "area" => "Prep Table"}
+}
+
+product_list.each do |name, product_hash|
+    p = Product.create(product_hash)
+    p.save
+end
