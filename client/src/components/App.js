@@ -3,7 +3,7 @@ import PrepTimers from './prepTimers';
 
 const App = () => {
     return (
-        <div>
+        <div className="container">
             <PrepTimers />
         </div>
     )
