@@ -4,13 +4,13 @@ import Product from '../stateless/product';
 
 class PrepTimers extends React.Component {
 
-    makeTimers() {
+    renderTimers() {
         return this.props.products[0].map(product => <Product item={product} key={product.name} />)
     }
 
     render() {
         return (
-            <div>{this.makeTimers()}</div>
+            <div>{this.renderTimers()}</div>
         )
     }
 }
