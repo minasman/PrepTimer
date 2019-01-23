@@ -1,11 +1,12 @@
-const removeItem = (name, description, secondary, area) => {
+const removeItem = (item) => {
+    console.log('hit action remove item')
     return {
         type: 'REMOVE_ITEM',
         payload: {
-            name: name,
-            description: description,
-            secondary: secondary,
-            area: area
+            name: item.name,
+            description: item.description,
+            secondary: item.secondary,
+            area: item.area
         }
     }
 }

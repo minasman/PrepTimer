@@ -1,11 +1,12 @@
-const addItem = (name, description, secondary, area) => {
+const addItem = (item) => {
+    console.log('hit action add item')
     return {
         type: 'ADD_ITEM',
         payload: {
-            name: name,
-            description: description,
-            secondary: secondary,
-            area: area
+            name: item.name,
+            description: item.description,
+            secondary: item.secondary,
+            area: item.area
         }
     }
 }

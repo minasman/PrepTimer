@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import startTimer from '../actions/startTimer';
+import removeItem from '../actions/removeProduct';
 
 class Product extends React.Component {
     state = {
@@ -29,7 +29,9 @@ class Product extends React.Component {
     }
 
     render() {
-        return (
+        console.log('hit products')
+        console.log(this.props.products)
+         return (
             <>
                 <div className="card" style={{width: '30rem'}}>
                     <div className="card-body">
@@ -38,7 +40,7 @@ class Product extends React.Component {
                                 <h5 className="card-title d-inline">{this.props.item.name}</h5>
                             </div>
                             <div className="col-4 align-items-right">
-                                <button className="btn btn-danger btn-sm align-right" >Remove Item</button>
+                                <button className="btn btn-danger btn-sm align-right" onClick={() => this.props.removeItem(this.props.item)} >Remove Item</button>
                             </div>
                         </div>
                         <div className="row">
@@ -58,9 +60,10 @@ class Product extends React.Component {
 }
 
 const mapStateToProps = (state) => {
+    console.log('hit mstp in product')
     return {
         products: state.products
     }
 }
 
-export default connect(mapStateToProps, {startTimer})(Product)
+export default connect(mapStateToProps, {removeItem })(Product)
