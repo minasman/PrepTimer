@@ -7,6 +7,7 @@ class PrepTimers extends React.Component {
 
     componentDidMount() {
         this.props.getProducts();
+        debugger;
     }
 
     renderTimers() {
