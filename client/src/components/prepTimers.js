@@ -1,8 +1,13 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Product from '../stateless/product';
+import getProducts from '../actions/getProducts';
 
 class PrepTimers extends React.Component {
+
+    componentDidMount() {
+        this.props.getProducts();
+    }
 
     renderTimers() {
         return this.props.products.map(product => <Product item={product} key={product.name} />)
@@ -26,4 +31,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(PrepTimers)
+export default connect(mapStateToProps,{getProducts})(PrepTimers)
