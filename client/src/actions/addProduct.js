@@ -1,14 +1,10 @@
-const addItem = (item) => {
-    console.log('hit action add item')
-    return {
-        type: 'ADD_ITEM',
-        payload: {
-            name: item.name,
-            description: item.description,
-            secondary: item.secondary,
-            area: item.area
-        }
+const addItem = (item) => async dispatch => {
+    const response = await fetch(`products.json`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(item)
+        })
+        dispatch({ type: 'ADD_ITEM', payload: item})
     }
-}
 
 export default addItem;

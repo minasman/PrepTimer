@@ -6,7 +6,7 @@ class AddItemForm extends React.Component {
     state = {
         name: "",
         description: "",
-        secondary: 0,
+        secondary_shelf_life: 0,
         area: ""
     }
 
@@ -19,7 +19,7 @@ class AddItemForm extends React.Component {
     }
 
     changeSecondary = (e) => {
-        this.setState({ secondary: e.target.value })
+        this.setState({ secondary_shelf_life: e.target.value })
     }
 
     changeArea = (e) => {
@@ -34,7 +34,7 @@ class AddItemForm extends React.Component {
             <form onSubmit={() => this.props.addItem(this.state)}>
                 <input className="form-control" type="text"  onChange={this.changeName} value={this.state.name} placeholder="Item Name" name="itemName"></input>
                 <input className="form-control" type="text" onChange={this.changeDescription} value={this.state.description} placeholder="Item Description" name="description"></input>
-                <input className="form-control" type="integer" onChange={this.changeSecondary} value={this.state.secondary} placeholder="Secondary Shelf Life in Seconds" name="secondary"></input>
+                <input className="form-control" type="integer" onChange={this.changeSecondary} value={this.state.secondary_shelf_life} placeholder="Secondary Shelf Life in Seconds" name="secondary_shelf_life"></input>
                 <input className="form-control" type="text" onChange={this.changeArea} value={this.state.area} placeholder="Holding Area" name="area"></input>
                 <button className="btn btn-primary btn-sm" type="submit">Add New Item</button>
             </form>
