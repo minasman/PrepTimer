@@ -4,7 +4,7 @@ import removeItem from '../actions/removeProduct';
 
 class Product extends React.Component {
     state = {
-        timeLeft: this.props.item.secondary
+        timeLeft: this.props.item.secondary_shelf_life
     }
 
     handleStart = () => {
@@ -17,7 +17,7 @@ class Product extends React.Component {
 
     handleReset = () => {
         clearInterval(this.state.timer);
-        this.setState({timeLeft: this.props.item.secondary});
+        this.setState({timeLeft: this.props.item.secondary_shelf_life});
     }
 
     displayTimer = () => {
@@ -40,7 +40,7 @@ class Product extends React.Component {
                                 <h5 className="card-title d-inline">{this.props.item.name}</h5>
                             </div>
                             <div className="col-4 align-items-right">
-                                <button className="btn btn-danger btn-sm align-right" onClick={() => this.props.removeItem(this.props.item)} >Remove Item</button>
+                                <button className="btn btn-danger btn-sm align-right" onClick={() => this.props.removeItem(this.props.item.id)} >Remove Item</button>
                             </div>
                         </div>
                         <div className="row">
