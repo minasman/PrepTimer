@@ -1,5 +1,5 @@
 const addItem = (item) => async dispatch => {
-    const response = await fetch(`products.json`, {
+    await fetch(`products.json`, {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)

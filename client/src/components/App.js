@@ -3,8 +3,6 @@ import PrepTimers from './prepTimers';
 import AddItemForm from './addItemForm';
 
 const App = () => {
-    console.log('hit app.js')
-
     return (
         <div className="container">
             <div className="row">

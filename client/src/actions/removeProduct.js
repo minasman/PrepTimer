@@ -1,5 +1,5 @@
 const removeItem = (id) => async dispatch => {
-    const response = await fetch(`products/${id}.json`, {
+    await fetch(`products/${id}.json`, {
         method: 'DELETE',
         headers: {'Content-Type': 'application/json'}
         })

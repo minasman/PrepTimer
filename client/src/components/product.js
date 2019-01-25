@@ -29,8 +29,6 @@ class Product extends React.Component {
     }
 
     render() {
-        console.log('hit products')
-        console.log(this.props.products)
          return (
             <>
                 <div className="card" style={{width: '30rem'}}>
@@ -60,7 +58,6 @@ class Product extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    console.log('hit mstp in product')
     return {
         products: state.products
     }
