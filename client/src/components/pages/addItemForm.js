@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import addItem from '../actions/addProduct';
+import addItem from '../../actions/addProduct';
 
 class AddItemForm extends React.Component {
     state = {

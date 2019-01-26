@@ -1,10 +1,12 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 import removeItem from '../actions/removeProduct';
 
 class Product extends React.Component {
     state = {
-        timeLeft: this.props.item.secondary_shelf_life
+        timeLeft: this.props.item.secondary_shelf_life,
+        editURL: `/products/${this.props.item.id}`
     }
 
     handleStart = () => {
@@ -31,13 +33,16 @@ class Product extends React.Component {
     render() {
          return (
             <>
-                <div className="card" style={{width: '30rem'}}>
+                <div className="card" style={{width: '50rem'}}>
                     <div className="card-body">
                         <div className="row">
                             <div className="col-8">
                                 <h5 className="card-title d-inline">{this.props.item.name}</h5>
                             </div>
-                            <div className="col-4 align-items-right">
+                            <div className="col-2 align-items-right">
+                                <Link className="btn btn-secondary btn-sm align-right" to={this.state.editURL} >Edit Item</Link>
+                            </div>
+                            <div className="col-2 align-items-right">
                                 <button className="btn btn-danger btn-sm align-right" onClick={() => this.props.removeItem(this.props.item.id)} >Remove Item</button>
                             </div>
                         </div>

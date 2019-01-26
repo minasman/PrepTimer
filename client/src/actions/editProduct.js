@@ -1,10 +1,10 @@
-const addItem = (item) => async dispatch => {
+const editItem = (item) => async dispatch => {
     await fetch(`http://localhost:3000/products.json`, {
-        method: 'POST',
+        method: 'PUT',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(item)
         })
-        dispatch({ type: 'ADD_ITEM', payload: item})
+        dispatch({ type: 'EDIT_ITEM', payload: item})
     }
 
-export default addItem;
+export default editItem;

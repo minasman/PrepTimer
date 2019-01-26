@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Product from './product';
-import getProducts from '../actions/getProducts';
+import Product from '../product';
+import getProducts from '../../actions/getProducts';
 
 class PrepTimers extends React.Component {
 
