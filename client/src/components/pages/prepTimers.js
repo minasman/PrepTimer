@@ -8,9 +8,8 @@ class PrepTimers extends React.Component {
     componentDidMount() {
         this.props.getProducts();
     }
-
     renderTimers() {
-        return this.props.products.map(product => <Product item={product} key={product.name} />)
+        return this.props.products.map(product => <Product item={product} key={product.id} />)
     }
 
     render() {

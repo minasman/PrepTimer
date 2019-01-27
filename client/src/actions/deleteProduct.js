@@ -1,10 +1,10 @@
-const editItem = (id, formValues) => async dispatch => {
+const deleteProduct = (id) => async dispatch => {
     const response = await fetch(`http://localhost:3000/products/${id}.json`, {
-        method: 'PUT',
+        method: 'DELETE',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(formValues)
         })
-        dispatch({ type: 'EDIT_PRODUCT', payload: response.data })
+        dispatch({ type: 'DELETE_PRODUCT', payload: id })
     }
 
-export default editItem;
+export default deleteProduct;

@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 const updateProduct = (products = [], action) => {
     switch (action.type) {
         case 'REMOVE_ITEM':
@@ -12,6 +11,4 @@ const updateProduct = (products = [], action) => {
     }
 }
 
-export default combineReducers({
-    products: updateProduct
-})
+export default updateProduct;

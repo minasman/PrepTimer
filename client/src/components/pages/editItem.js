@@ -3,11 +3,21 @@ import { connect } from 'react-redux';
 import editItem from '../../actions/editProduct';
 
 class EditProduct extends React.Component {
+    state = {
+        productToEdit: {}
+    }
+
+    componentDidMount() {
+        const itemKey = parseInt(this.props.location.pathname.split('/').pop());
+        this.setState({
+            productToEdit: this.props.products.find( product => product.id === itemKey )
+        })
+    }
 
     render() {
         return (
             <div>
-                <p>{this.props.products.map(product => product.name) } </p>
+                <p>{this.state.productToEdit.name } </p>
             </div>
         )
     }

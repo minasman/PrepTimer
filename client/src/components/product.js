@@ -6,7 +6,8 @@ import removeItem from '../actions/removeProduct';
 class Product extends React.Component {
     state = {
         timeLeft: this.props.item.secondary_shelf_life,
-        editURL: `/products/${this.props.item.id}`
+        editURL: `/products/${this.props.item.id}`,
+        timer: 0
     }
 
     handleStart = () => {
@@ -62,10 +63,5 @@ class Product extends React.Component {
     }
 }
 
-const mapStateToProps = (state) => {
-    return {
-        products: state.products
-    }
-}
 
-export default connect(mapStateToProps, {removeItem })(Product)
+export default connect(null, {removeItem })(Product)

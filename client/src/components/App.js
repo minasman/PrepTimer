@@ -1,12 +1,11 @@
 import React from 'react';
-import {BrowserRouter, Route, Link } from 'react-router-dom';
+import {BrowserRouter, Route} from 'react-router-dom';
 
 import PrepTimers from './pages/prepTimers';
-import AddItemForm from './pages/addItemForm';
+import AddItemForm from './pages/productCreate';
 import EditProduct from './pages/editItem';
 import Header from './../stateless/Header';
 
-debugger
 const App = () => {
     return (
         <BrowserRouter>
@@ -19,5 +18,7 @@ const App = () => {
         </BrowserRouter>
     )
 }
+
+
 
 export default App;
