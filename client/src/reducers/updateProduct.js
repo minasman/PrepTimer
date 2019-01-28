@@ -1,4 +1,4 @@
-const updateProduct = (products = [], action) => {
+export const updateProduct = (products = [], action) => {
     switch (action.type) {
         case 'REMOVE_ITEM':
             return products.filter((product) => product.id !== action.payload);
@@ -11,4 +11,4 @@ const updateProduct = (products = [], action) => {
     }
 }
 
-export default updateProduct;
+
