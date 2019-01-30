@@ -1,6 +1,7 @@
 import React from 'react';
 import {Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 import editItem from '../../actions/editProduct';
 
 class ProductEdit extends React.Component {
@@ -9,7 +10,6 @@ class ProductEdit extends React.Component {
         const itemKey = parseInt(this.props.location.pathname.split('/').pop());
         const mydata  = this.props.products.find( product => product.id === itemKey)
         this.props.initialize(mydata);
-
     }
 
     renderError({ error, touched }) {
@@ -32,7 +32,8 @@ class ProductEdit extends React.Component {
     }
 
     onSubmit = (formValues) => {
-        this.props.editItem(formValues);
+        this.props.editItem(formValues.id, formValues);
+        return <Redirect to="/" />
     }
 
     render() {
@@ -44,7 +45,7 @@ class ProductEdit extends React.Component {
                 <Field name="description" component={this.renderInput} label="Product Description" />
                 <Field name="secondary_shelf_life" component={this.renderInput} label="Secondary Shelf Life In Seconds" />
                 <Field name="area" component={this.renderInput} label="Secondary Storage Area" />
-                <button className="btn btn-primary">Submit</button>
+                <button className="btn btn-primary" >Submit</button>
             </form>
         )
     }

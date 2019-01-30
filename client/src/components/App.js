@@ -5,6 +5,7 @@ import PrepTimers from './pages/prepTimers';
 import ProductCreate from './pages/productCreate';
 import ProductEdit from './pages/productEdit';
 import Header from './../stateless/Header';
+import Topics from './pages/topics';
 
 const App = () => {
     return (
@@ -13,7 +14,9 @@ const App = () => {
                 <Header />
                 <Route path="/" exact component={ PrepTimers } />
                 <Route path="/products/new" exact component={ ProductCreate } />
-                <Route path="/products/" component={ ProductEdit } />
+                {/* I need to fix the routing later */}
+                <Route path="/products/fix thislater" component={ ProductEdit } />
+                <Route path="/topics" component={Topics} />
             </div>
         </BrowserRouter>
     )
