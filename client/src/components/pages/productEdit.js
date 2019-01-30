@@ -37,7 +37,6 @@ class ProductEdit extends React.Component {
     }
 
     render() {
-
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
                 <h2>Edit </h2>

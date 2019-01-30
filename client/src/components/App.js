@@ -15,7 +15,7 @@ const App = () => {
                 <Route path="/" exact component={ PrepTimers } />
                 <Route path="/products/new" exact component={ ProductCreate } />
                 {/* I need to fix the routing later */}
-                <Route path="/products/fix thislater" component={ ProductEdit } />
+                {/* <Route path="/products/" component={ ProductEdit } /> */}
                 <Route path="/topics" component={Topics} />
             </div>
         </BrowserRouter>
