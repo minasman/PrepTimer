@@ -34,9 +34,9 @@ class Product extends React.Component {
         return `${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
     }
 
-    toLink = () => {
-        return <Link to={`/products/${this.state.id}`} ></Link>
-    }
+    // toLink = () => {
+    //     return <Link to={`/products/${this.state.id}`} ></Link>
+    // }
 
     render() {
          return (
@@ -48,8 +48,8 @@ class Product extends React.Component {
                                 <h5 className="card-title d-inline">{this.props.item.name}</h5>
                             </div>
                             <div className="col-2 align-items-right">
-                                <button onClick={this.toLink}>Edit Item</button>
-                                {/* <Link className="btn btn-secondary btn-sm align-right" to={`/products/${this.state.id}`} >Edit Item</Link> */}
+                                {/* <button onClick={this.toLink}>Edit Item</button> */}
+                                <Link className="btn btn-secondary btn-sm align-right" to={`/products/${this.state.id}`} >Edit Item</Link>
                             </div>
                             <div className="col-2 align-items-right">
                                 <button className="btn btn-danger btn-sm align-right" onClick={() => this.props.removeItem(this.props.item.id)} >Remove Item</button>
