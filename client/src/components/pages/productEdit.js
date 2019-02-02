@@ -1,7 +1,6 @@
 import React from 'react';
 import {Field, reduxForm } from 'redux-form';
 import { connect } from 'react-redux';
-import { Redirect } from 'react-router-dom';
 import editItem from '../../actions/editProduct';
 
 class ProductEdit extends React.Component {
@@ -33,11 +32,9 @@ class ProductEdit extends React.Component {
 
     onSubmit = (formValues) => {
         this.props.editItem(formValues.id, formValues);
-        return <Redirect to="/" />
     }
 
     render() {
-        debugger
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
                 <h2>Edit </h2>
@@ -45,7 +42,7 @@ class ProductEdit extends React.Component {
                 <Field name="description" component={this.renderInput} label="Product Description" />
                 <Field name="secondary_shelf_life" component={this.renderInput} label="Secondary Shelf Life In Seconds" />
                 <Field name="area" component={this.renderInput} label="Secondary Storage Area" />
-                <button className="btn btn-primary" >Submit</button>
+                <button className="btn btn-primary">Submit</button>
             </form>
         )
     }

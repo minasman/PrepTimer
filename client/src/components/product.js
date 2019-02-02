@@ -1,8 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import removeItem from '../actions/removeProduct';
-import ProductEdit from './pages/productEdit';
 
 
 class Product extends React.Component {

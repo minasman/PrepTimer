@@ -6,6 +6,9 @@ export const updateProduct = (products = [], action) => {
             return [...products, action.payload];
         case 'GET_PRODUCTS':
             return action.payload;
+        case 'EDIT_PRODUCT':
+            const oldList = products.filter((product) => product.id !== action.payload.id);
+            return [...oldList, action.payload];
         default:
             return products;
     }
