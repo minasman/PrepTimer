@@ -37,6 +37,7 @@ class ProductEdit extends React.Component {
     }
 
     render() {
+        debugger
         return (
             <form onSubmit={this.props.handleSubmit(this.onSubmit)} >
                 <h2>Edit </h2>
