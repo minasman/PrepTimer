@@ -15,8 +15,10 @@ class PrepTimers extends React.Component {
     render() {
         return (
             <div>
-                <h2>Prep Timers</h2>
-                {this.renderTimers()}
+                <h2 className="text-center">Prep Timers</h2>
+                <div className="row justify-content-md-center">
+                    {this.renderTimers()}
+                </div>
             </div>
         )
     }

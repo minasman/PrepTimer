@@ -33,10 +33,6 @@ class Product extends React.Component {
         return `${hours} Hours ${minutes} Minutes ${seconds} Seconds`;
     }
 
-    // toLink = () => {
-    //     return <Link to={`/products/${this.state.id}`} ></Link>
-    // }
-
     render() {
          return (
             <>
