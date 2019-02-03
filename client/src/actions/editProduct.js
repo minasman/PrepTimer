@@ -1,3 +1,5 @@
+import history from './../history';
+
 const editItem = (id, formValues) => async dispatch => {
     await fetch(`http://localhost:3000/products/${id}.json`, {
         method: 'PUT',
@@ -5,6 +7,7 @@ const editItem = (id, formValues) => async dispatch => {
         body: JSON.stringify(formValues)
         })
         dispatch({ type: 'EDIT_PRODUCT', payload: formValues })
+        history.push('/products');
     }
 
 export default editItem;

@@ -1,5 +1,6 @@
 import React from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {Router, Route, Switch} from 'react-router-dom';
+import history from './../history';
 
 import PrepTimers from './pages/prepTimers';
 import ProductCreate from './pages/productCreate';
@@ -9,7 +10,7 @@ import Home from '../stateless/home';
 
 const App = () => {
     return (
-        <BrowserRouter>
+        <Router history={history}>
             <div className="container">
                 <Header />
                 <Switch>
@@ -19,7 +20,7 @@ const App = () => {
                     <Route path='/products/:id' component={ProductEdit} />
                 </Switch>
             </div>
-        </BrowserRouter>
+        </Router>
     )
 }
 export default App;

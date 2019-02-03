@@ -7,7 +7,6 @@ import removeItem from '../actions/removeProduct';
 class Product extends React.Component {
     state = {
         timeLeft: this.props.item.secondary_shelf_life,
-        // editURL: `/products/${this.props.item.id}`,
         id: this.props.item.id,
         timer: 0
     }
@@ -43,7 +42,6 @@ class Product extends React.Component {
                                 <h5 className="card-title d-inline">{this.props.item.name}</h5>
                             </div>
                             <div className="col-2 align-items-right">
-                                {/* <button onClick={this.toLink}>Edit Item</button> */}
                                 <Link className="btn btn-secondary btn-sm align-right" to={`/products/${this.state.id}`} >Edit Item</Link>
                             </div>
                             <div className="col-2 align-items-right">
@@ -61,7 +59,6 @@ class Product extends React.Component {
                         </div>
                     </div>
                 </div>
-                {/* <Route to={`/products/${this.state.id}`} component={ProductEdit} /> */}
             </>
         )
     }
