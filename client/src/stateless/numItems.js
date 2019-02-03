@@ -7,4 +7,5 @@ const NumItems = (props) => {
         </div>
     )
 }
+
 export default NumItems;
