@@ -21,8 +21,6 @@ class ProductEdit extends React.Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-    console.log(state);
-    console.log(ownProps);
     return {
         product: state.products.filter(product => product.id === parseInt(ownProps.match.params.id))[0]
         }
