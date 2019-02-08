@@ -6,7 +6,9 @@ import ProductForm from '../productForm';
 class ProductCreate extends React.Component {
 
     onSubmit = (formValues) => {
+        console.log('A')
         this.props.createProduct(formValues);
+        console.log('B')
     }
 
     render() {
